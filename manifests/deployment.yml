@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: apraneethapbackend 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apraneethapbackend
+  template:
+    metadata:
+      labels:
+        app: apraneethapbackend 
+    spec:
+      containers:
+        - name: apraneethapbackend 
+          image: praneethareg.azurecr.io/apraneethapbackend
+          ports:
+          - containerPort: 8000
